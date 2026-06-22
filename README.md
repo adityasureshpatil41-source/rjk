@@ -21,7 +21,7 @@ A complete luxury-grade, fully responsive website for buying and selling second-
 
 ## Core Features
 
-- Cinematic premium hero with interactive 3D refrigerator + bakery counter
+- Cinematic premium photo hero with featured equipment showcase
 - Glassmorphism and metallic luxury UI language
 - Featured, new arrivals, and best-deals product tabs
 - Category tilt and depth interactions
@@ -100,7 +100,7 @@ Open:
 - Lightweight static architecture
 - Deferred script loading
 - Lazy-loaded images
-- Mobile optimized 3D complexity and pixel ratio
+- Mobile optimized hero and layout polish
 - Smooth animations with reduced-motion support
 
 ## Important

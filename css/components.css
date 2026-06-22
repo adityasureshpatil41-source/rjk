@@ -303,25 +303,37 @@
   overflow: hidden;
   border: 1px solid var(--color-border-gold);
   box-shadow: var(--shadow-lg), var(--shadow-gold);
-  aspect-ratio: 4/5;
-  max-height: 520px;
+  aspect-ratio: 5/6;
+  max-height: 560px;
 }
 
 .hero__visual-main img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   transition: transform var(--duration-slow) var(--ease-out-expo);
 }
 
 .hero__visual-main:hover img {
-  transform: scale(1.04);
+  transform: scale(1.03);
+}
+
+.hero__visual-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--space-lg);
+  background: linear-gradient(180deg, transparent 35%, rgba(8, 8, 9, 0.88) 100%);
+  pointer-events: none;
 }
 
 .hero__visual-tag {
-  position: absolute;
-  top: var(--space-md);
-  left: var(--space-md);
+  display: inline-flex;
+  align-self: flex-start;
+  margin-bottom: var(--space-sm);
   padding: 0.4rem 0.85rem;
   background: rgba(8, 8, 9, 0.72);
   border: 1px solid var(--color-border-gold);
@@ -334,43 +346,12 @@
   backdrop-filter: blur(12px);
 }
 
-.hero__visual-float {
-  position: absolute;
-  right: -1rem;
-  bottom: -1.25rem;
-  width: min(58%, 240px);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  border: 1px solid var(--color-border);
-  background: var(--glass-bg);
-  backdrop-filter: var(--glass-blur);
-  box-shadow: var(--shadow-lg);
-}
-
-.hero__visual-float img {
-  width: 100%;
-  aspect-ratio: 4/3;
-  object-fit: cover;
-}
-
-.hero__visual-caption {
-  padding: 0.75rem 0.9rem;
-  border-top: 1px solid var(--color-border);
-}
-
-.hero__visual-label {
-  display: block;
-  font-family: var(--font-display);
+.hero__visual-note {
+  margin: 0;
+  max-width: 28ch;
   font-size: var(--text-sm);
-  font-weight: 600;
-  color: var(--color-gold-light);
-}
-
-.hero__visual-text {
-  display: block;
-  font-size: var(--text-xs);
-  color: var(--color-text-dim);
-  margin-top: 0.15rem;
+  line-height: 1.45;
+  color: var(--color-text-muted);
 }
 
 .hero__scroll-hint {
@@ -443,14 +424,13 @@
   }
 
   .hero__visual-main {
-    aspect-ratio: 16/11;
+    aspect-ratio: 16/10;
     max-height: none;
   }
 
-  .hero__visual-float {
-    right: 0.75rem;
-    bottom: -1rem;
-    width: min(52%, 200px);
+  .hero__visual-note {
+    max-width: none;
+    font-size: var(--text-xs);
   }
 
   .hero__scroll-hint { display: none; }
@@ -474,9 +454,6 @@
     gap: 0.5rem;
   }
 
-  .hero__visual-float {
-    width: 46%;
-  }
 }
 
 /* ========== PRODUCT CARDS ========== */
