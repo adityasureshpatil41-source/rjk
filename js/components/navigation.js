@@ -12,6 +12,10 @@ const Navigation = {
 
   render(container) {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const linksHtml = this.pages.map(p => `
+      <li><a href="${p.href}" class="nav__link ${currentPage === p.href ? 'active' : ''}">${p.label}</a></li>
+    `).join('');
+
     container.innerHTML = `
       <header class="header" id="header">
         <div class="container header__inner">
@@ -19,68 +23,81 @@ const Navigation = {
             <span class="logo__icon">R</span>
             <span class="logo__brand">RAJ <span class="text-gold">KITCHEN</span></span>
           </a>
-          <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-drawer">
             <span></span><span></span><span></span>
           </button>
-          <nav class="nav" aria-label="Main navigation">
-            <ul class="nav__list" id="nav-list">
-              ${this.pages.map(p => `
-                <li><a href="${p.href}" class="nav__link ${currentPage === p.href ? 'active' : ''}">${p.label}</a></li>
-              `).join('')}
+          <nav class="nav nav--desktop" aria-label="Main navigation">
+            <ul class="nav__list">
+              ${linksHtml}
             </ul>
             <a href="products.html" class="btn btn--primary btn--sm nav__cta">Browse Inventory</a>
           </nav>
         </div>
       </header>
     `;
+
+    let drawer = document.getElementById('nav-drawer');
+    if (!drawer) {
+      drawer = document.createElement('div');
+      drawer.id = 'nav-drawer';
+      drawer.className = 'nav-drawer';
+      drawer.setAttribute('aria-hidden', 'true');
+      drawer.innerHTML = `
+        <div class="nav-drawer__backdrop" id="nav-drawer-backdrop" aria-hidden="true"></div>
+        <nav class="nav-drawer__panel" aria-label="Mobile navigation">
+          <ul class="nav-drawer__list">
+            ${linksHtml}
+          </ul>
+          <a href="products.html" class="btn btn--primary nav-drawer__cta">Browse Inventory</a>
+        </nav>
+      `;
+      document.body.appendChild(drawer);
+    }
+
     this.bindEvents();
   },
 
   bindEvents() {
     const toggle = document.getElementById('nav-toggle');
-    const list = document.getElementById('nav-list');
+    const drawer = document.getElementById('nav-drawer');
+    const backdrop = document.getElementById('nav-drawer-backdrop');
     const header = document.getElementById('header');
 
     const setMenuOpen = (open) => {
-      if (!toggle || !list || !header) return;
+      if (!toggle || !drawer || !header) return;
 
-      list.classList.toggle('open', open);
+      drawer.classList.toggle('open', open);
       toggle.classList.toggle('active', open);
       header.classList.toggle('menu-open', open);
+      document.documentElement.classList.toggle('nav-locked', open);
       toggle.setAttribute('aria-expanded', open);
+      drawer.setAttribute('aria-hidden', !open);
 
       if (open) {
         this.scrollLockY = window.scrollY;
-        document.body.style.position = 'fixed';
         document.body.style.top = `-${this.scrollLockY}px`;
-        document.body.style.left = '0';
-        document.body.style.right = '0';
-        document.body.style.width = '100%';
-        document.body.style.overflow = 'hidden';
       } else {
-        document.body.style.position = '';
         document.body.style.top = '';
-        document.body.style.left = '';
-        document.body.style.right = '';
-        document.body.style.width = '';
-        document.body.style.overflow = '';
         window.scrollTo(0, this.scrollLockY);
       }
     };
 
-    if (toggle && list) {
+    if (toggle && drawer) {
       toggle.addEventListener('click', () => {
-        setMenuOpen(!list.classList.contains('open'));
+        setMenuOpen(!drawer.classList.contains('open'));
       });
 
-      list.querySelectorAll('.nav__link').forEach(link => {
+      if (backdrop) {
+        backdrop.addEventListener('click', () => setMenuOpen(false));
+      }
+
+      drawer.querySelectorAll('.nav__link, .nav-drawer__cta').forEach(link => {
         link.addEventListener('click', () => setMenuOpen(false));
       });
     }
 
     window.addEventListener('scroll', () => {
-      const scroll = window.scrollY;
-      if (header) header.classList.toggle('scrolled', scroll > 20);
+      if (header) header.classList.toggle('scrolled', window.scrollY > 20);
     }, { passive: true });
   }
 };
