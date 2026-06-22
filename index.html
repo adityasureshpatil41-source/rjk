@@ -7,8 +7,8 @@
   <meta name="keywords" content="commercial kitchen equipment, used restaurant equipment, industrial refrigerators, bakery counters">
   <meta name="theme-color" content="#080809">
   <title>Raj Kitchen | Premium Commercial Kitchen Equipment</title>
-  <link rel="stylesheet" href="css/main.css?v=3">
-  <link rel="stylesheet" href="css/components.css?v=3">
+  <link rel="stylesheet" href="css/main.css?v=4">
+  <link rel="stylesheet" href="css/components.css?v=4">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,25 +21,59 @@
   <div id="site-nav"></div>
 
   <!-- Hero -->
-  <section class="hero">
-    <div class="hero__bg-glow parallax-layer" data-speed="0.1"></div>
-    <div class="container hero__grid">
+  <section class="hero hero--premium">
+    <div class="hero__backdrop" aria-hidden="true">
+      <img
+        class="hero__backdrop-img"
+        src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=1600&q=80&auto=format&fit=crop"
+        alt=""
+        loading="eager"
+        fetchpriority="high"
+      >
+      <div class="hero__backdrop-shade"></div>
+    </div>
+
+    <div class="container hero__layout">
       <div class="hero__content">
         <span class="eyebrow">Luxury Industrial Showroom</span>
         <h1 class="hero__title">
           <span class="text-gradient" id="hero-title">Premium Commercial<br>Kitchen Equipment.<br>Exceptional Value.</span>
         </h1>
         <p class="hero__subtitle" id="hero-subtitle">Curated pre-owned industrial kitchen solutions for restaurants, hotels, and bakeries.</p>
-        <div class="btn-group">
+        <div class="btn-group hero__actions">
           <a href="products.html" class="btn btn--primary btn--lg">Browse Inventory</a>
           <a href="#" class="btn btn--secondary btn--lg" id="hero-whatsapp" target="_blank" rel="noopener">WhatsApp Now</a>
         </div>
+        <div class="hero__trust">
+          <div class="hero__trust-item"><strong>2500+</strong><span>Equipment Sold</span></div>
+          <div class="hero__trust-item"><strong>15+</strong><span>Years Experience</span></div>
+          <div class="hero__trust-item"><strong>98%</strong><span>Client Satisfaction</span></div>
+        </div>
       </div>
-      <div class="hero__canvas-wrap">
-        <canvas id="hero-canvas" aria-label="Interactive 3D commercial kitchen equipment showcase"></canvas>
-        <span class="hero__canvas-label">Drag to explore · 3D Showcase</span>
+
+      <div class="hero__visual" data-aos="fade-left">
+        <div class="hero__visual-main">
+          <img
+            src="https://images.unsplash.com/photo-1571175443880-49e1d25b2bc5?w=900&q=80&auto=format&fit=crop"
+            alt="Premium commercial stainless steel refrigerator in showroom"
+            loading="eager"
+          >
+          <span class="hero__visual-tag">Featured Inventory</span>
+        </div>
+        <div class="hero__visual-float">
+          <img
+            src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=80&auto=format&fit=crop"
+            alt="Bakery display counter equipment"
+            loading="lazy"
+          >
+          <div class="hero__visual-caption">
+            <span class="hero__visual-label">Bakery Counters</span>
+            <span class="hero__visual-text">Inspected &amp; ready to install</span>
+          </div>
+        </div>
       </div>
     </div>
+
     <div class="hero__scroll-hint">
       <span>Scroll</span>
       <div class="hero__scroll-line"></div>
@@ -141,7 +175,6 @@
   <div id="site-footer"></div>
 
   <!-- Scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
@@ -156,7 +189,6 @@
   <script src="js/components/footer.js" defer></script>
   <script src="js/components/floating-buttons.js" defer></script>
   <script src="js/components/product-card.js" defer></script>
-  <script src="js/hero-3d.js" defer></script>
   <script src="js/animations.js" defer></script>
   <script src="js/main.js" defer></script>
 </body>

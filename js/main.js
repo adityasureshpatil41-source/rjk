@@ -50,9 +50,6 @@ const HomePage = {
     this.renderTestimonials(testimonials);
     this.renderCTA(homepage, contact);
 
-    requestAnimationFrame(() => {
-      if (typeof Hero3D !== 'undefined') Hero3D.init('hero-canvas');
-    });
     this.initFeatureTabs(products);
     this.initTestimonialSlider();
   },

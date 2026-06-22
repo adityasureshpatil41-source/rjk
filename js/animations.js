@@ -18,8 +18,9 @@ const Animations = {
     tl.from('.hero .eyebrow', { y: 30, opacity: 0, duration: 0.8 })
       .from('.hero__title', { y: 60, opacity: 0, duration: 1 }, '-=0.4')
       .from('.hero__subtitle', { y: 40, opacity: 0, duration: 0.8 }, '-=0.5')
-      .from('.hero .btn-group .btn', { y: 30, opacity: 0, duration: 0.6, stagger: 0.15 }, '-=0.3')
-      .from('.hero__canvas-wrap', { scale: 0.9, opacity: 0, duration: 1.2 }, '-=0.8');
+      .from('.hero__actions .btn', { y: 30, opacity: 0, duration: 0.6, stagger: 0.15 }, '-=0.3')
+      .from('.hero__trust-item', { y: 20, opacity: 0, duration: 0.5, stagger: 0.1 }, '-=0.2')
+      .from('.hero__visual', { x: 40, opacity: 0, duration: 1 }, '-=0.8');
   },
 
   initCounterAnimations() {
