@@ -6,7 +6,6 @@ A complete luxury-grade, fully responsive website for buying and selling second-
 - CSS3
 - Vanilla JavaScript
 - GSAP, AOS, Swiper.js
-- Three.js (optimized procedural 3D hero)
 - Firebase Auth, Firestore, and Storage integration
 
 ## Pages
