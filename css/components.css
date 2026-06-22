@@ -4,15 +4,20 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
+  z-index: 1200;
   height: var(--header-height);
   transition: all var(--duration-normal) var(--ease-out-expo);
 }
 
 .header.scrolled {
-  background: rgba(8, 8, 9, 0.85);
+  background: rgba(8, 8, 9, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.header.menu-open {
+  background: rgba(8, 8, 9, 0.98);
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -115,12 +120,21 @@
 .nav__toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 @media (max-width: 900px) {
+  .header {
+    background: rgba(8, 8, 9, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
   .header__inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 0.75rem;
     width: 100%;
+    position: relative;
+    z-index: 2;
   }
 
   .logo {
@@ -140,7 +154,19 @@
     display: flex !important;
     flex: 0 0 auto;
     order: 2;
-    z-index: 1002;
+    position: relative;
+    z-index: 3;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+  }
+
+  .nav__toggle span {
+    background: var(--color-gold-light);
   }
 
   .nav {
@@ -168,25 +194,36 @@
 
   .nav__list {
     position: fixed;
-    top: var(--header-height);
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
+    top: 0;
+    padding: calc(var(--header-height) + 2rem) 1.5rem 2rem;
     flex-direction: column;
-    justify-content: center;
-    gap: var(--space-2xl);
-    background: rgba(8, 8, 9, 0.97);
+    justify-content: flex-start;
+    align-items: center;
+    gap: var(--space-xl);
+    background: rgba(8, 8, 9, 0.98);
     backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
     transform: translateX(100%);
     transition: transform var(--duration-slow) var(--ease-out-expo);
-    z-index: 1001;
+    z-index: 1;
     width: 100%;
     pointer-events: auto;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
-  .nav__list.open { transform: translateX(0); }
+  .nav__list.open {
+    transform: translateX(0);
+  }
 
-  .nav__link { font-size: var(--text-2xl); font-family: var(--font-display); }
+  .nav__link {
+    font-size: var(--text-2xl);
+    font-family: var(--font-display);
+    width: 100%;
+    text-align: center;
+    padding: 0.35rem 0;
+  }
 }
 
 /* ========== HERO ========== */

@@ -8,6 +8,8 @@ const Navigation = {
     { href: 'contact.html', label: 'Contact' }
   ],
 
+  scrollLockY: 0,
+
   render(container) {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     container.innerHTML = `
@@ -39,28 +41,46 @@ const Navigation = {
     const list = document.getElementById('nav-list');
     const header = document.getElementById('header');
 
+    const setMenuOpen = (open) => {
+      if (!toggle || !list || !header) return;
+
+      list.classList.toggle('open', open);
+      toggle.classList.toggle('active', open);
+      header.classList.toggle('menu-open', open);
+      toggle.setAttribute('aria-expanded', open);
+
+      if (open) {
+        this.scrollLockY = window.scrollY;
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${this.scrollLockY}px`;
+        document.body.style.left = '0';
+        document.body.style.right = '0';
+        document.body.style.width = '100%';
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.left = '';
+        document.body.style.right = '';
+        document.body.style.width = '';
+        document.body.style.overflow = '';
+        window.scrollTo(0, this.scrollLockY);
+      }
+    };
+
     if (toggle && list) {
       toggle.addEventListener('click', () => {
-        const open = list.classList.toggle('open');
-        toggle.classList.toggle('active');
-        toggle.setAttribute('aria-expanded', open);
-        document.body.style.overflow = open ? 'hidden' : '';
+        setMenuOpen(!list.classList.contains('open'));
       });
 
       list.querySelectorAll('.nav__link').forEach(link => {
-        link.addEventListener('click', () => {
-          list.classList.remove('open');
-          toggle.classList.remove('active');
-          document.body.style.overflow = '';
-        });
+        link.addEventListener('click', () => setMenuOpen(false));
       });
     }
 
-    let lastScroll = 0;
     window.addEventListener('scroll', () => {
       const scroll = window.scrollY;
-      if (header) header.classList.toggle('scrolled', scroll > 50);
-      lastScroll = scroll;
+      if (header) header.classList.toggle('scrolled', scroll > 20);
     }, { passive: true });
   }
 };
