@@ -62,7 +62,11 @@ const HomePage = {
     const subtitle = document.getElementById('hero-subtitle');
     const waBtn = document.getElementById('hero-whatsapp');
 
-    if (title) title.textContent = data.heroTitle;
+    if (title && data.heroTitle) {
+      title.innerHTML = data.heroTitle
+        .replace(/\.\s+/g, '.<br>')
+        .replace(/<br>$/, '');
+    }
     if (subtitle) subtitle.textContent = data.heroSubtitle;
     if (waBtn) waBtn.href = `https://wa.me/${contact.whatsapp.replace(/\D/g, '')}?text=Hello, I'm interested in your commercial kitchen equipment.`;
   },

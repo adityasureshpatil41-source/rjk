@@ -35,7 +35,7 @@
   --text-3xl: clamp(1.75rem, 1.3rem + 1.5vw, 2.5rem);
   --text-4xl: clamp(2.25rem, 1.5rem + 2.5vw, 3.5rem);
   --text-5xl: clamp(2.75rem, 1.8rem + 3.5vw, 4.75rem);
-  --text-hero: clamp(3rem, 2rem + 4.5vw, 6rem);
+  --text-hero: clamp(2rem, 1.25rem + 3vw, 6rem);
 
   /* Spacing */
   --space-xs: 0.25rem;
