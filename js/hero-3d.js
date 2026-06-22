@@ -65,6 +65,8 @@ const Hero3D = (() => {
     displayGroup.position.set(isMobile ? 0.8 : 2.4, 0, isMobile ? -0.5 : 0.2);
     displayGroup.scale.setScalar(isMobile ? 0.75 : 0.9);
 
+    layoutScene();
+
     particles = createParticles();
     scene.add(particles);
 
@@ -383,6 +385,34 @@ const Hero3D = (() => {
     scene.add(lights.under);
   }
 
+  function layoutScene() {
+    if (!fridgeGroup || !displayGroup || !showcase) return;
+
+    if (isMobile) {
+      fridgeGroup.position.set(0, 0, 0.15);
+      fridgeGroup.scale.setScalar(0.68);
+      displayGroup.position.set(0, 0, -0.55);
+      displayGroup.scale.setScalar(0.48);
+      showcase.position.set(0, 0, 0);
+      showcase.scale.setScalar(0.92);
+      if (camera) {
+        camera.position.set(0, 1.55, 8.8);
+        camera.lookAt(0, 1.05, 0);
+      }
+    } else {
+      fridgeGroup.position.set(-1.8, 0, 0);
+      fridgeGroup.scale.setScalar(1);
+      displayGroup.position.set(2.4, 0, 0.2);
+      displayGroup.scale.setScalar(0.9);
+      showcase.position.set(0, 0, 0);
+      showcase.scale.setScalar(1);
+      if (camera) {
+        camera.position.set(0, 2.2, 6.2);
+        camera.lookAt(0, 1.4, 0);
+      }
+    }
+  }
+
   function bindEvents(canvas) {
     const updateMouse = (clientX, clientY) => {
       const rect = canvas.getBoundingClientRect();
@@ -420,31 +450,39 @@ const Hero3D = (() => {
     mouse.y += (mouse.targetY - mouse.y) * 0.06;
 
     autoAngle += isMobile ? 0.004 : 0.006;
+    const parallax = isMobile ? 0.12 : 0.45;
 
     if (showcase) {
-      showcase.rotation.y = autoAngle + mouse.x * 0.45;
-      showcase.rotation.x = mouse.y * 0.08;
-      showcase.position.y = Math.sin(t * 1.2) * 0.06;
+      showcase.rotation.y = autoAngle + mouse.x * parallax;
+      showcase.rotation.x = mouse.y * (isMobile ? 0.04 : 0.08);
+      showcase.position.y = Math.sin(t * 1.2) * (isMobile ? 0.03 : 0.06);
     }
 
     if (fridgeGroup) {
-      fridgeGroup.rotation.y = Math.sin(t * 0.8) * 0.08 + mouse.x * 0.12;
+      fridgeGroup.rotation.y = Math.sin(t * 0.8) * 0.08 + mouse.x * (isMobile ? 0.05 : 0.12);
       fridgeGroup.position.y = Math.sin(t * 1.5) * 0.04;
     }
 
     if (displayGroup) {
-      displayGroup.rotation.y = Math.cos(t * 0.7) * 0.1 - mouse.x * 0.1;
+      displayGroup.rotation.y = Math.cos(t * 0.7) * 0.1 - mouse.x * (isMobile ? 0.04 : 0.1);
       displayGroup.position.y = Math.sin(t * 1.3 + 1) * 0.05;
     }
 
     if (camera) {
-      const camX = mouse.x * 0.8;
-      const camY = 2.2 + mouse.y * 0.35;
-      const camZ = (isMobile ? 7.5 : 6.2) - mouse.y * 0.3;
-      camera.position.x += (camX - camera.position.x) * 0.05;
-      camera.position.y += (camY - camera.position.y) * 0.05;
-      camera.position.z += (camZ - camera.position.z) * 0.05;
-      camera.lookAt(mouse.x * 0.3, 1.4 + mouse.y * 0.15, 0);
+      if (isMobile) {
+        camera.position.x += (0 - camera.position.x) * 0.06;
+        camera.position.y += (1.55 - camera.position.y) * 0.06;
+        camera.position.z += (8.8 - camera.position.z) * 0.06;
+        camera.lookAt(0, 1.05, 0);
+      } else {
+        const camX = mouse.x * 0.8;
+        const camY = 2.2 + mouse.y * 0.35;
+        const camZ = 6.2 - mouse.y * 0.3;
+        camera.position.x += (camX - camera.position.x) * 0.05;
+        camera.position.y += (camY - camera.position.y) * 0.05;
+        camera.position.z += (camZ - camera.position.z) * 0.05;
+        camera.lookAt(mouse.x * 0.3, 1.4 + mouse.y * 0.15, 0);
+      }
     }
 
     if (lights.gold) {
@@ -491,6 +529,7 @@ const Hero3D = (() => {
     camera.updateProjectionMatrix();
     renderer.setSize(w, h);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1.5 : 2));
+    layoutScene();
   }
 
   function destroy() {

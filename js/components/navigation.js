@@ -15,12 +15,12 @@ const Navigation = {
         <div class="container header__inner">
           <a href="index.html" class="logo" aria-label="Raj Kitchen Home">
             <span class="logo__icon">R</span>
-            <span>RAJ <span class="text-gold">KITCHEN</span></span>
+            <span class="logo__brand">RAJ <span class="text-gold">KITCHEN</span></span>
           </a>
+          <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
           <nav class="nav" aria-label="Main navigation">
-            <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
-              <span></span><span></span><span></span>
-            </button>
             <ul class="nav__list" id="nav-list">
               ${this.pages.map(p => `
                 <li><a href="${p.href}" class="nav__link ${currentPage === p.href ? 'active' : ''}">${p.label}</a></li>

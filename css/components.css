@@ -31,6 +31,12 @@
   font-size: var(--text-xl);
   font-weight: 800;
   letter-spacing: -0.03em;
+  min-width: 0;
+}
+
+.logo__brand {
+  white-space: nowrap;
+  line-height: 1;
 }
 
 .logo__icon {
@@ -109,7 +115,56 @@
 .nav__toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 @media (max-width: 900px) {
-  .nav__toggle { display: flex; }
+  .header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    width: 100%;
+  }
+
+  .logo {
+    flex: 1 1 auto;
+    min-width: 0;
+    max-width: calc(100% - 52px);
+    font-size: clamp(0.82rem, 3.2vw, 1rem);
+  }
+
+  .logo__brand {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .nav__toggle {
+    display: flex !important;
+    flex: 0 0 auto;
+    order: 2;
+    z-index: 1002;
+  }
+
+  .nav {
+    position: static;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    order: 3;
+  }
+
+  .nav__cta {
+    display: none !important;
+    visibility: hidden;
+    width: 0 !important;
+    height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    position: absolute !important;
+  }
 
   .nav__list {
     position: fixed;
@@ -124,6 +179,9 @@
     backdrop-filter: blur(24px);
     transform: translateX(100%);
     transition: transform var(--duration-slow) var(--ease-out-expo);
+    z-index: 1001;
+    width: 100%;
+    pointer-events: auto;
   }
 
   .nav__list.open { transform: translateX(0); }

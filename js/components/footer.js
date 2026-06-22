@@ -14,7 +14,7 @@ const Footer = {
             <div>
               <a href="index.html" class="logo">
                 <span class="logo__icon">R</span>
-                <span>RAJ <span class="text-gold">KITCHEN</span></span>
+                <span class="logo__brand">RAJ <span class="text-gold">KITCHEN</span></span>
               </a>
               <p class="footer__brand-text">
                 India's premier destination for pre-owned commercial kitchen equipment.
