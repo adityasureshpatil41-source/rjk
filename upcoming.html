@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Preview upcoming commercial kitchen equipment arrivals at Raj Kitchen.">
+  <title>Upcoming Inventory | Raj Kitchen</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+</head>
+<body data-page="upcoming">
+  <div class="page-loader" id="page-loader"><div class="loader-ring"></div></div>
+  <div id="site-nav"></div>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Coming Soon</span>
+      <h1 class="page-hero__title">Upcoming <span class="text-gradient">Inventory</span></h1>
+      <p class="page-hero__subtitle">Be the first to know about incoming premium commercial kitchen equipment. Reserve yours today.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="grid-3" id="products-grid"></div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js" defer></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js" defer></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js" defer></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js" defer></script>
+  <script src="js/firebase-config.js" defer></script>
+  <script src="js/firebase-service.js" defer></script>
+  <script src="js/components/navigation.js" defer></script>
+  <script src="js/components/footer.js" defer></script>
+  <script src="js/components/floating-buttons.js" defer></script>
+  <script src="js/components/product-card.js" defer></script>
+  <script src="js/animations.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

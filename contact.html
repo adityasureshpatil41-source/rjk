@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Raj Kitchen for commercial kitchen equipment inquiries, quotes, and support.">
+  <title>Contact Us | Raj Kitchen</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+</head>
+<body data-page="contact">
+  <div class="page-loader" id="page-loader"><div class="loader-ring"></div></div>
+  <div id="site-nav"></div>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Get in Touch</span>
+      <h1 class="page-hero__title">Contact <span class="text-gradient">Us</span></h1>
+      <p class="page-hero__subtitle">Our specialists are ready to help you find the perfect equipment for your kitchen.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="contact-grid">
+        <div id="contact-info"></div>
+        <form class="contact-form" id="contact-form" data-aos="fade-left">
+          <h3 style="margin-bottom:1.5rem;font-family:var(--font-display)">Send a Message</h3>
+          <div class="form-group">
+            <label class="form-label" for="name">Full Name</label>
+            <input class="form-input" type="text" id="name" name="name" required placeholder="Your name">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="phone">Phone Number</label>
+            <input class="form-input" type="tel" id="phone" name="phone" required placeholder="+91 XXXXX XXXXX">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="message">Message</label>
+            <textarea class="form-textarea" id="message" name="message" required placeholder="Tell us about your equipment needs..."></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--lg" style="width:100%">Send via WhatsApp</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js" defer></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js" defer></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js" defer></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js" defer></script>
+  <script src="js/firebase-config.js" defer></script>
+  <script src="js/firebase-service.js" defer></script>
+  <script src="js/components/navigation.js" defer></script>
+  <script src="js/components/footer.js" defer></script>
+  <script src="js/components/floating-buttons.js" defer></script>
+  <script src="js/animations.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

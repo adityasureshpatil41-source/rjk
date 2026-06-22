@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Raj Kitchen — Premium pre-owned commercial kitchen equipment. Refrigerators, ovens, bakery counters, and industrial food machinery.">
+  <meta name="keywords" content="commercial kitchen equipment, used restaurant equipment, industrial refrigerators, bakery counters">
+  <meta name="theme-color" content="#080809">
+  <title>Raj Kitchen | Premium Commercial Kitchen Equipment</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body data-page="home">
+
+  <div class="page-loader" id="page-loader"><div class="loader-ring"></div></div>
+
+  <div id="site-nav"></div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero__bg-glow parallax-layer" data-speed="0.1"></div>
+    <div class="container hero__grid">
+      <div class="hero__content">
+        <span class="eyebrow">Luxury Industrial Showroom</span>
+        <h1 class="hero__title">
+          <span class="text-gradient" id="hero-title">Premium Commercial Kitchen Equipment. Exceptional Value.</span>
+        </h1>
+        <p class="hero__subtitle" id="hero-subtitle">Curated pre-owned industrial kitchen solutions for restaurants, hotels, and bakeries.</p>
+        <div class="btn-group">
+          <a href="products.html" class="btn btn--primary btn--lg">Browse Inventory</a>
+          <a href="#" class="btn btn--secondary btn--lg" id="hero-whatsapp" target="_blank" rel="noopener">WhatsApp Now</a>
+        </div>
+      </div>
+      <div class="hero__canvas-wrap">
+        <canvas id="hero-canvas" aria-label="Interactive 3D commercial kitchen equipment showcase"></canvas>
+        <span class="hero__canvas-label">Drag to explore · 3D Showcase</span>
+      </div>
+    </div>
+    <div class="hero__scroll-hint">
+      <span>Scroll</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- Marquee -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span class="marquee__item">Refrigerators</span>
+      <span class="marquee__item">Deep Freezers</span>
+      <span class="marquee__item">Bakery Counters</span>
+      <span class="marquee__item">Display Counters</span>
+      <span class="marquee__item">Commercial Ovens</span>
+      <span class="marquee__item">Hotel Kitchen Equipment</span>
+      <span class="marquee__item">Industrial Food Machinery</span>
+      <span class="marquee__item">Stainless Steel</span>
+    </div>
+  </div>
+
+  <!-- Featured Products -->
+  <section class="section" id="featured">
+    <div class="container">
+      <div class="section-header section-header--center" data-aos="fade-up">
+        <span class="eyebrow">Curated Selection</span>
+        <h2 class="section-title">Featured <span class="text-gradient">Equipment</span></h2>
+        <p class="section-subtitle">Hand-picked commercial kitchen solutions, inspected and certified for peak performance.</p>
+      </div>
+      <div class="feature-tabs" data-aos="fade-up">
+        <button class="feature-tab active" data-tab="featured">Featured</button>
+        <button class="feature-tab" data-tab="newArrivals">New Arrivals</button>
+        <button class="feature-tab" data-tab="bestDeals">Best Deals</button>
+      </div>
+      <div class="grid-3" id="featured-grid"></div>
+      <div style="text-align:center;margin-top:3rem" data-aos="fade-up">
+        <a href="products.html" class="btn btn--secondary">View All Inventory →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="section-header section-header--center" data-aos="fade-up">
+        <span class="eyebrow">Browse by Type</span>
+        <h2 class="section-title">Equipment <span class="text-gradient">Categories</span></h2>
+        <p class="section-subtitle">Explore our comprehensive range of commercial and industrial kitchen equipment.</p>
+      </div>
+      <div class="grid-3" id="categories-grid"></div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center" data-aos="fade-up">
+        <span class="eyebrow">The Raj Kitchen Difference</span>
+        <h2 class="section-title">Why Choose <span class="text-gradient">Us</span></h2>
+      </div>
+      <div class="grid-4" id="why-grid"></div>
+    </div>
+  </section>
+
+  <!-- Statistics -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="stats-grid" id="stats-grid"></div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center" data-aos="fade-up">
+        <span class="eyebrow">Client Stories</span>
+        <h2 class="section-title">Trusted by <span class="text-gradient">Industry Leaders</span></h2>
+      </div>
+      <div class="swiper testimonials-swiper" data-aos="fade-up">
+        <div class="swiper-wrapper" id="testimonials-wrapper"></div>
+        <div class="swiper-pagination" style="margin-top:2rem;position:relative"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-section__inner" data-aos="zoom-in">
+        <h2 class="cta-section__title" id="cta-title">Ready to Upgrade Your Kitchen?</h2>
+        <p class="cta-section__text" id="cta-text">Connect with our specialists for personalized equipment recommendations.</p>
+        <div class="btn-group" style="justify-content:center">
+          <a href="contact.html" class="btn btn--primary btn--lg">Get in Touch</a>
+          <a href="#" class="btn btn--secondary btn--lg" id="cta-whatsapp" target="_blank" rel="noopener">WhatsApp Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js" defer></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js" defer></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js" defer></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js" defer></script>
+  <script src="js/firebase-config.js" defer></script>
+  <script src="js/firebase-service.js" defer></script>
+  <script src="js/components/navigation.js" defer></script>
+  <script src="js/components/footer.js" defer></script>
+  <script src="js/components/floating-buttons.js" defer></script>
+  <script src="js/components/product-card.js" defer></script>
+  <script src="js/hero-3d.js" defer></script>
+  <script src="js/animations.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

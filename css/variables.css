@@ -1,0 +1,87 @@
+:root {
+  /* Brand palette */
+  --color-bg: #080809;
+  --color-bg-elevated: #0f0f11;
+  --color-bg-card: rgba(18, 18, 22, 0.72);
+  --color-surface: #141418;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-gold: rgba(201, 169, 98, 0.35);
+
+  --color-gold: #c9a962;
+  --color-gold-light: #e8d5a3;
+  --color-gold-dark: #9a7b3c;
+  --color-chrome: #b8bcc4;
+  --color-steel: #6b7280;
+
+  --color-text: #f4f4f5;
+  --color-text-muted: #a1a1aa;
+  --color-text-dim: #71717a;
+
+  --color-success: #34d399;
+  --color-warning: #fbbf24;
+  --color-danger: #f87171;
+  --color-info: #60a5fa;
+
+  /* Typography */
+  --font-display: 'Syne', system-ui, sans-serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+
+  --text-xs: clamp(0.7rem, 0.65rem + 0.2vw, 0.75rem);
+  --text-sm: clamp(0.8rem, 0.75rem + 0.25vw, 0.875rem);
+  --text-base: clamp(0.9rem, 0.85rem + 0.3vw, 1rem);
+  --text-lg: clamp(1rem, 0.95rem + 0.35vw, 1.125rem);
+  --text-xl: clamp(1.15rem, 1rem + 0.5vw, 1.35rem);
+  --text-2xl: clamp(1.4rem, 1.1rem + 1vw, 1.875rem);
+  --text-3xl: clamp(1.75rem, 1.3rem + 1.5vw, 2.5rem);
+  --text-4xl: clamp(2.25rem, 1.5rem + 2.5vw, 3.5rem);
+  --text-5xl: clamp(2.75rem, 1.8rem + 3.5vw, 4.75rem);
+  --text-hero: clamp(3rem, 2rem + 4.5vw, 6rem);
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --space-4xl: 6rem;
+  --space-section: clamp(4rem, 8vw, 8rem);
+
+  /* Layout */
+  --container-max: 1320px;
+  --container-narrow: 960px;
+  --header-height: 80px;
+
+  /* Effects */
+  --glass-bg: rgba(12, 12, 16, 0.65);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-blur: blur(20px);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 24px 64px rgba(0, 0, 0, 0.55);
+  --shadow-gold: 0 8px 40px rgba(201, 169, 98, 0.15);
+  --glow-gold: 0 0 60px rgba(201, 169, 98, 0.2);
+
+  /* Motion */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --duration-fast: 200ms;
+  --duration-normal: 400ms;
+  --duration-slow: 700ms;
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms;
+    --duration-normal: 0ms;
+    --duration-slow: 0ms;
+  }
+}

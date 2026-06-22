@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse our complete inventory of premium pre-owned commercial kitchen equipment.">
+  <title>Products | Raj Kitchen</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+</head>
+<body data-page="products">
+  <div class="page-loader" id="page-loader"><div class="loader-ring"></div></div>
+  <div id="site-nav"></div>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Full Inventory</span>
+      <h1 class="page-hero__title">Our <span class="text-gradient">Products</span></h1>
+      <p class="page-hero__subtitle">Explore our curated collection of certified pre-owned commercial kitchen equipment.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="filters-bar" id="filters-bar"></div>
+      <p class="text-muted text-sm" id="products-count" style="margin-bottom:1.5rem"></p>
+      <div class="grid-3" id="products-grid"></div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js" defer></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js" defer></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js" defer></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js" defer></script>
+  <script src="js/firebase-config.js" defer></script>
+  <script src="js/firebase-service.js" defer></script>
+  <script src="js/components/navigation.js" defer></script>
+  <script src="js/components/footer.js" defer></script>
+  <script src="js/components/floating-buttons.js" defer></script>
+  <script src="js/components/product-card.js" defer></script>
+  <script src="js/animations.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
